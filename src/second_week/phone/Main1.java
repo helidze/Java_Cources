@@ -10,6 +10,13 @@ public class Main1 {
         Phone phone = new Phone();
 
         phone.newContact("Alyosha",80937255340L);
+        phone.newContact("Alyosha1",809372553140L);
+        phone.newContact("Alyosha2",809372553240L);
+        phone.newContact("Alyosha3",809372553430L);
         phone.showContacts();
+
+        phone.setSimCard(true);
+        phone.call();
+
     }
 }

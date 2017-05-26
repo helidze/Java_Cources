@@ -25,8 +25,22 @@ public class Phone {
 
     public void showContacts(){
 
-        System.out.println(arrayList.get(0).getFIO());
-        System.out.println(arrayList.get(0).getPhoneNumber());
+        for (int i = 0; i < arrayList.size(); i++) {
+            System.out.println(arrayList.get(i).getFIO());
+            System.out.println(arrayList.get(i).getPhoneNumber());
+            System.out.println();
+        }
+
+    }
+
+    public void call(){
+        if (this.simCard){
+            System.out.println("Звоним на " + arrayList.get((int) Math.round( Math.random()*arrayList.size())).getPhoneNumber());
+        }
+        else {
+            System.out.println("Sim Card doesn't exist");
+        }
+
     }
 
     public String getModel() {
@@ -41,8 +55,9 @@ public class Phone {
         return simCard;
     }
 
-    public void setSimCard(boolean simCard) {
+    public boolean setSimCard(boolean simCard) {
         this.simCard = simCard;
+        return simCard;
     }
 }
 
