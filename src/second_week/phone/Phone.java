@@ -10,6 +10,7 @@ public class Phone {
     private boolean simCard;
     Contact contact;
     SimCard simCa;
+    ArrayList<Contact> arrayList = new ArrayList<>();
 
     public void refillBalance(Integer money){
         if (simCa.getBalance()<0){
@@ -17,14 +18,15 @@ public class Phone {
         }
     }
 
-    public void newContact(String name, Integer phone){
-        ArrayList<Contact> arrayList = new ArrayList<>();
+    public void newContact(String name, Long phone){
+
         arrayList.add(new Contact(name,phone));
     }
 
     public void showContacts(){
-        System.out.println(contact.getFIO());
-        System.out.println(contact.getPhoneNumber());
+
+        System.out.println(arrayList.get(0).getFIO());
+        System.out.println(arrayList.get(0).getPhoneNumber());
     }
 
     public String getModel() {

@@ -5,9 +5,11 @@ package second_week.phone;
  */
 public class Contact {
     private String FIO;
-    private int phoneNumber;
+    private Long phoneNumber;
 
-    public Contact(String name, Integer phone) {
+    public Contact(String name, Long phone) {
+        this.FIO = name;
+        this.phoneNumber = phone;
     }
 
 
@@ -15,7 +17,7 @@ public class Contact {
         return FIO;
     }
 
-    public int getPhoneNumber() {
+    public Long getPhoneNumber() {
         return phoneNumber;
     }
 }
