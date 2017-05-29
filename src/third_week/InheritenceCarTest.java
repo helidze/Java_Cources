@@ -11,7 +11,7 @@ public class InheritenceCarTest {
         Truck truck = new Truck("BMW","red",1997,1370,400);
 
         System.out.println();
-        truck.aboutTruck();
+
 
     }
 }

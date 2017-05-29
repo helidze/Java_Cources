@@ -4,8 +4,8 @@ package second_week.phone;
  * Created by George on 24.05.2017.
  */
 public class SimCard {
-    private int balance;
-    private int tariff;
+    protected int balance;
+    protected int tariff;
 
     public int getBalance() {
         return balance;

@@ -14,10 +14,18 @@ public class Truck extends InheritenceCar {
         this.capacity = cap;
     }
 
-
-    public void aboutTruck() {
+    @Override
+    public void aboutCar() {
         System.out.println("Model: " + this.getModel() +
                 "\nColor: " + this.getColor() + "\nYear: " +
                 this.getYear() + "\nNumber: " + this.getNumber() + "\nCapacity: " + this.capacity);
+    }
+
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Model: " + this.getModel() +
+                "\nColor: " + this.getColor() + "\nYear: " +
+                this.getYear() + "\nNumber: " + this.getNumber() + "\nCapacity: " + this.capacity);
+        return stringBuilder.toString() ;
     }
 }

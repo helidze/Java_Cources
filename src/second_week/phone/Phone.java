@@ -6,8 +6,8 @@ import java.util.ArrayList;
  * Created by George on 24.05.2017.
  */
 public class Phone {
-    private String model;
-    private boolean simCard;
+    protected String model;
+    protected boolean simCard;
     Contact contact;
     SimCard simCa;
     ArrayList<Contact> arrayList = new ArrayList<>();
@@ -17,6 +17,10 @@ public class Phone {
             simCa.setBalance(100);
         }
     }
+
+    public void aboutPhone() {
+        System.out.println("Model: " + this.getModel() +
+                "\nSimCard: " + this.simCa );}
 
     public void newContact(String name, Long phone){
 
@@ -59,5 +63,6 @@ public class Phone {
         this.simCard = simCard;
         return simCard;
     }
+
 }
 
