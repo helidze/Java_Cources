@@ -10,6 +10,7 @@ public class Phone {
     private boolean simCard;
     Contact contact;
     SimCard simCa;
+    ArrayList<Contact> arrayList = new ArrayList<>();
 
     public void refillBalance(Integer money){
         if (simCa.getBalance()<0){
@@ -17,14 +18,29 @@ public class Phone {
         }
     }
 
-    public void newContact(String name, Integer phone){
-        ArrayList<Contact> arrayList = new ArrayList<>();
+    public void newContact(String name, Long phone){
+
         arrayList.add(new Contact(name,phone));
     }
 
     public void showContacts(){
-        System.out.println(contact.getFIO());
-        System.out.println(contact.getPhoneNumber());
+
+        for (int i = 0; i < arrayList.size(); i++) {
+            System.out.println(arrayList.get(i).getFIO());
+            System.out.println(arrayList.get(i).getPhoneNumber());
+            System.out.println();
+        }
+
+    }
+
+    public void call(){
+        if (this.simCard){
+            System.out.println("Звоним на " + arrayList.get((int) Math.round( Math.random()*arrayList.size())).getPhoneNumber());
+        }
+        else {
+            System.out.println("Sim Card doesn't exist");
+        }
+
     }
 
     public String getModel() {
@@ -39,8 +55,9 @@ public class Phone {
         return simCard;
     }
 
-    public void setSimCard(boolean simCard) {
+    public boolean setSimCard(boolean simCard) {
         this.simCard = simCard;
+        return simCard;
     }
 }
 
