@@ -7,9 +7,11 @@ public class PhoneTest {
     public static void main(String[] args) {
         Phone phone = new Phone();
         Kyivstar kyivstar = new Kyivstar();
-        phone.aboutPhone();
+        phone.aboutPhone("Iphone","Mark");
         kyivstar.balance();
         kyivstar.refillBalance();
         kyivstar.aboutSimcard();
+
+        phone.addSimcard();
     }
 }

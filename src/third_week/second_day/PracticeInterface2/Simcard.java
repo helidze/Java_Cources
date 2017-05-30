@@ -5,7 +5,7 @@ package third_week.second_day.PracticeInterface2;
  */
 public interface Simcard {
     int REFILL_BALANCE = 50;
-    boolean SIMCARD = true;
+    boolean SIMCARD = false;
 
     void balance();
     void refillBalance();
