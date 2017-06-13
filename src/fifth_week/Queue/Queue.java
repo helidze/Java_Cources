@@ -3,7 +3,9 @@ package fifth_week.Queue;
 /**
  * Created by George on 13.06.2017.
  */
-public interface Queue {
+public interface Queue<Item> {
+
+
 
     boolean add (Integer el); //либо удачно доавил элемент в конец очереди либо нет (true/false)
     Integer remove(); //возвращает и удаляет элемент из очереди
