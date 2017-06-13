@@ -3,7 +3,7 @@ package fifth_week.Queue;
 /**
  * Created by George on 13.06.2017.
  */
-public interface Queue<Item> {
+public interface Queue {
 
 
 
