@@ -8,18 +8,13 @@ import java.util.Scanner;
 public class Recursive {
     public static void main(String[] args) {
         //переменная i
-      /*  Scanner scanner = new Scanner(System.in);
-        System.out.print("Vvedite 4islo: ");
-        System.out.print(a(scanner.nextInt()));*/
+//      Scanner scanner = new Scanner(System.in);
+//        System.out.print("Vvedite 4islo: ");
+//        System.out.print(a(scanner.nextInt()));
 
 
-        System.out.println(pow(11,2));
-    }
-    public static long pow(int a, int b){
-        if(b!=1){ return a*pow(a,b-1);}
-        else {
-            return a;
-        }
+
+
 
     }
 
