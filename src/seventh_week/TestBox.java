@@ -7,7 +7,7 @@ import java.lang.String;
  */
 public class TestBox {
     public static void main(String[] args) {
-        Box <Integer, Integer> box = new Box(new Integer(15), new Integer(10));
+       /* Box <Integer, Integer> box = new Box(new Integer(15), new Integer(10));
         Box <String, Integer> box1 = new Box(new java.lang.String("foo"), new Integer(12));
 
         box.print();
@@ -17,11 +17,13 @@ public class TestBox {
         Integer i = box.getObject();
         String str = box1.getObject();
         Integer integer = box.getObject1();
-        String string = box1.getObject();
+        Integer string = box1.getObject1();
 
         System.out.println(i);
         System.out.println(integer);
         System.out.println(str);
         System.out.println(string);
+    }*/
+
     }
 }
