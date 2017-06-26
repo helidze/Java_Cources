@@ -1,5 +1,8 @@
 package sixth_week.List_ArrayList;
 
+import java.util.*;
+import java.util.LinkedList;
+
 /**
  * Created by George on 20.06.2017.
  */
@@ -30,7 +33,7 @@ public class javaList {
         }
         current.next = end;
         listCount++;
-        System.out.println(d + " appended to tail!");
+        System.out.println(d + " Добавлено в хвост!");
         return true;
     }
 
@@ -40,7 +43,7 @@ public class javaList {
         int jump;
 
         if (index > listCount || index < 1) {
-            System.out.println("Add Failed: index out of bounds of size of linked list!!");
+            System.out.println("Добавление завершилось ошибкой: индекс out of bounds раземера linked list!!");
             return false;
         } else {
             jump = 0;
@@ -51,7 +54,7 @@ public class javaList {
             end.next = current.next;
             current.next = end;
             listCount++;
-            System.out.println("Success! " + d + " added at index " + index);
+            System.out.println("Удачно! " + d + " добавлено в индекс " + index);
             return true;
         }
     }
@@ -62,12 +65,12 @@ public class javaList {
             if (current.next.data == d) {
                 current.next = current.next.next;
                 listCount--;
-                System.out.println("Success! Node with data " + d + " deleted.");
+                System.out.println("Удачно! Node с данными " + d + " удалена.");
                 return true;
             }
             current = current.next;
         }
-        System.out.println("Delete Failed: No node found with given data!");
+        System.out.println("Удаление завершилоь ошибкой: Не найден node для предоставленых значений!");
         return false;
     }
 
@@ -75,7 +78,7 @@ public class javaList {
         ListNode current = head;
         int jump;
         if (index > listCount || index < 1) {
-            System.out.println("Delete Failed: index out of bounds of size of linked list!!");
+            System.out.println("Удаление завершилось ошибкой: индекс out of bounds раземера linked list!!");
             return false;
         } else {
             jump = 0;
@@ -84,7 +87,7 @@ public class javaList {
                 jump++;
             }
             current.next = current.next.next;
-            System.out.println("Success! Node at index " + index + " deleted.");
+            System.out.println("Успешно! Node с индексом " + index + " удален.");
             listCount--;
             return true;
         }
@@ -103,5 +106,9 @@ public class javaList {
         javaList.show();
         javaList.deleteNodeAtIndex(2);
         javaList.show();
+        javaList.deleteNodeWithData(5);
+        javaList.show();
+        LinkedList linkedList = new LinkedList();
+        linkedList.indexOf(linkedList);
     }
 }
