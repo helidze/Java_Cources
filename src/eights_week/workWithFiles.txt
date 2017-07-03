@@ -1,0 +1,2 @@
+File directory = new File("D:" + File.separator + "Java_Cources" + File.separator + "test_dir"
+        File directory = new File("D:\\Java_Cources\\test_dir");
