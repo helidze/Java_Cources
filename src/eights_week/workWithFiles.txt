@@ -1,2 +1,10 @@
 File directory = new File("D:" + File.separator + "Java_Cources" + File.separator + "test_dir"
         File directory = new File("D:\\Java_Cources\\test_dir");
+
+Создать папку иерархию несуществующих до этого папок
+File file = new File(directory,"New_test/Test/Last_test"); //не существующие папки
+if(!dir.exists()){
+if(dir.mkdirs()){
+System.out.println("mkdirs - ok")
+}}
+}
