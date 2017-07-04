@@ -8,3 +8,80 @@ if(dir.mkdirs()){
 System.out.println("mkdirs - ok")
 }}
 }
+
+
+Консольное приложение для поиска, просмотра (только txt) и удаления файлов(Каталогов).
+
+1.1 Интерфейс приложения. Пользователю программы предлагается на выбор следующие действия:
+1. Поиск файла(каталога) на компьютере.
+2. Открыть файл. (только txt)
+3. Удаление файла(каталога) на компьютере.
+4. Завершить работу приложения.
+Выбор пользователя организовать через введение определенного числа с действием.
+
+1.2 Поиск файла. Реализовать метод рекурсивного поиска файла в указанном диске(каталоге/подкаталогах) searchFile(String file name):
+— Результат выполнения данного метода должен отобразить в консоли все пути к искомому файлу. — В конце результатов поиска вывести количество найденных файлов.
+— Если файл не найден, в указанном каталоге. Вывести сообщение: По указанному пути файл не найден.
+— Если указан неверный путь для поиска, сообщить пользователю об ошибке, и запросить путь повторно.
+Пример работы метода:
+Файл для поиска: test.txt
+Каталог в котором ищем: C:\test
+Результат:
+Файл найден по следующему пути:
+C:\test\document\test.txt
+C:\test\document\share\test.txt
+C:\test\test.txt
+Всего найденных файлов (3).
+
+1.3 Открыть файл. Реализовать метод openTxtFile(File file), со следующими проверками:
+— Если файл не найден, вывести сообщение: Файл не существует.
+— Если файл найден, проверить что расширение файла соответствует txt, и вывести его содержимое в консоль. В случае если расширение файла не txt, вывести сообщение: Неверный формат файла.
+1.4 Удаление каталога. Реализовать метод рекурсивного удаления каталога removeDirectory(File directory), со следующими проверками:
+— Если каталог пустой, то удаляем его сразу, иначе делаем рекурсивный обход всего содержимого в каталоге, и удаляем все в процессе.
+— В случае если каталог существует, обязательно запросить у пользователя подтверждение об удалении.
+1.5 Удаление файла. Реализовать метод удаления файла removeFile(File file), со следующей проверкой:
+— Если файл существует, запрашиваем у пользователя подтверждение удаления файла.
+— Если файл не существует, сообщаем пользователю о том что неверно задан путь к файлу.
+public static void main(String[] args) {
+  List<String> list = new LinkedList<String>();
+  list.add("test1");
+  list.add("test2");
+  list.add("test3");
+  list.add("test4");
+
+  for(String str : list){
+   System.out.println(str);
+  }
+
+  File file = new File("/volumes/data/fileTest/listItems.txt");
+  save(file, list);
+
+  List<String> fromFile = open(file);
+  System.out.println(fromFile);
+
+  }
+
+  public static void save(File file, List<String> list){
+   try(FileOutputStream fos = new FileOutputStream(file);
+    ObjectOutputStream oos = new ObjectOutputStream(fos)){
+    oos.writeObject(list);
+    oos.flush();
+   } catch (FileNotFoundException e) {
+    e.printStackTrace();
+   } catch (IOException e) {
+    e.printStackTrace();
+   }
+  }
+
+  public static List<String> open(File file){
+   try(FileInputStream fis = new FileInputStream(file);
+    ObjectInputStream ois = new ObjectInputStream(fis)){
+    return (List<String>) ois.readObject();
+   } catch (FileNotFoundException e) {
+    e.printStackTrace();
+   } catch (IOException e) {
+    e.printStackTrace();
+   } catch (ClassNotFoundException e) {
+    e.printStackTrace();
+   }
+   return null;
