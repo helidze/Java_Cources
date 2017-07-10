@@ -3,6 +3,8 @@ package nineth_week;
 /**
  * Created by George on 10.07.2017.
  */
+
+//through extends from Thread
 public class Threads extends Thread{
     private String name;
 

@@ -3,6 +3,8 @@ package nineth_week;
 /**
  * Created by George on 10.07.2017.
  */
+// through implementaion of Runnable
+
 public class Thread2 implements Runnable {
     private String name;
 
