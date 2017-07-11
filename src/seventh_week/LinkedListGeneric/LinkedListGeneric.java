@@ -21,7 +21,7 @@ public class LinkedListGeneric<T> {
 
 
     private void printList(LinkedListNode<T> node) {
-        System.out.println("Node is " + node.getValue());
+        System.out.println("MyTreeNode is " + node.getValue());
         if (node.getNext() != null) printList(node.getNext());
     }
 

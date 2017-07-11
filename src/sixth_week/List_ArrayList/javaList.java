@@ -65,7 +65,7 @@ public class javaList {
             if (current.next.data == d) {
                 current.next = current.next.next;
                 listCount--;
-                System.out.println("Удачно! Node с данными " + d + " удалена.");
+                System.out.println("Удачно! MyTreeNode с данными " + d + " удалена.");
                 return true;
             }
             current = current.next;
@@ -87,7 +87,7 @@ public class javaList {
                 jump++;
             }
             current.next = current.next.next;
-            System.out.println("Успешно! Node с индексом " + index + " удален.");
+            System.out.println("Успешно! MyTreeNode с индексом " + index + " удален.");
             listCount--;
             return true;
         }
