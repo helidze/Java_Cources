@@ -17,7 +17,7 @@ public class Tree {
             return;
         }
         Node current = root;
-        Node parent = null;
+        Node parent ;
         while(true){
             parent = current;
             if(id<current.data){
